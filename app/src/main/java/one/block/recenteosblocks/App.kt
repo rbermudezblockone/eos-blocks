@@ -1,11 +1,16 @@
 package one.block.recenteosblocks
 
 import android.app.Application
+import one.block.recenteosblocks.di.apolloClient
 import one.block.recenteosblocks.di.blockDetailViewModelModule
+import one.block.recenteosblocks.di.blockGraphQlDataSource
+import one.block.recenteosblocks.di.blockGraphQlMapper
 import one.block.recenteosblocks.di.blockRepositoryModule
+import one.block.recenteosblocks.di.blockRestDataSource
 import one.block.recenteosblocks.di.dbModule
 import one.block.recenteosblocks.di.eosApiModule
 import one.block.recenteosblocks.di.homeViewModelModule
+import one.block.recenteosblocks.di.httpClient
 import one.block.recenteosblocks.di.listViewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -24,8 +29,12 @@ class App : Application() {
                     listViewModelModule,
                     blockDetailViewModelModule,
                     blockRepositoryModule,
+                    blockGraphQlDataSource,
+                    blockGraphQlMapper,
                     dbModule,
-                    eosApiModule
+                    eosApiModule,
+                    apolloClient,
+                    httpClient
                 )
             )
         }

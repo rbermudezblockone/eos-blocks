@@ -1,0 +1,37 @@
+query BlockById($id: String!) {
+   blockById(id: $id) {
+       id
+       producer
+       producer_signature
+       previous
+       transactions {
+           trx {
+               transaction {
+                   ref_block_num
+               }
+           }
+       }
+       timestamp
+       block_num
+       full_block
+   }
+}
+
+query LatestBlock {
+   latestBlock {
+       id
+       producer
+       producer_signature
+       previous
+       transactions {
+           trx {
+               transaction {
+                   ref_block_num
+               }
+           }
+       }
+       timestamp
+       block_num
+       full_block
+   }
+}

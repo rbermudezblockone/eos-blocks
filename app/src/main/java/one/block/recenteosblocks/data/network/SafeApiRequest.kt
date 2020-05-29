@@ -4,6 +4,7 @@ import one.block.recenteosblocks.util.ApiException
 import org.json.JSONException
 import org.json.JSONObject
 import retrofit2.Response
+import com.apollographql.apollo.api.Response as GraphQlResponse
 
 abstract class SafeApiRequest {
 
@@ -23,6 +24,22 @@ abstract class SafeApiRequest {
                 } catch (e: JSONException) { }
             }
             message.append("Error code: ${response.code()}")
+            throw ApiException(message.toString())
+        }
+    }
+
+    suspend fun <T: Any> graphQlRequest(call: suspend() -> GraphQlResponse<T>) : T? {
+        val response = call.invoke()
+        if (response.hasErrors().not()) {
+            return response.data
+        } else {
+            val error = response.errors?.get(0).toString()
+            val message = StringBuilder()
+
+            try {
+                message.append(JSONObject(error).getString("message"))
+            } catch (e: JSONException) { }
+
             throw ApiException(message.toString())
         }
     }

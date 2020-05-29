@@ -42,7 +42,7 @@
             android:paddingLeft="5dp"
             android:paddingEnd="5dp"
             android:paddingRight="5dp"
-            android:text="@{block.blockNum}" />
+            android:text="@{block.id}" />
         <TextView
             android:id="@+id/block_number_label"
             android:layout_width="wrap_content"

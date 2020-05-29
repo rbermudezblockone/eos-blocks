@@ -23,12 +23,11 @@ interface EosAPI {
     ) : Response<Block>
 
     companion object {
-        operator fun invoke() : EosAPI {
-            return Retrofit.Builder()
+        operator fun invoke() =
+           Retrofit.Builder()
                 .baseUrl("https://eos.greymass.com/v1/chain/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(EosAPI::class.java)
-        }
     }
 }
