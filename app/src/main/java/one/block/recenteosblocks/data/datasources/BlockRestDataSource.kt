@@ -20,12 +20,4 @@ class BlockRestDataSource(
     }
 
     override suspend fun saveBlock(block: Block) = db.getBlockDao().insertOrUpdate(block)
-
-    suspend fun getBlockchainInfoGraphQl() {
-
-    }
-
-    suspend fun getBlockGraphQl() {
-
-    }
 }
