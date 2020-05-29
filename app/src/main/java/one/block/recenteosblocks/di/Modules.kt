@@ -7,7 +7,6 @@ import one.block.recenteosblocks.data.datasources.BlockGraphQlDataSource
 import one.block.recenteosblocks.data.datasources.BlockRestDataSource
 import one.block.recenteosblocks.data.datasources.mappers.BlockGraphQlMapper
 import one.block.recenteosblocks.data.db.AppDatabase
-import one.block.recenteosblocks.data.network.ApolloClientObject
 import one.block.recenteosblocks.data.network.EosAPI
 import one.block.recenteosblocks.data.network.GRAPHQL_URL
 import one.block.recenteosblocks.data.network.NET_TIMEOUT_SECONDS

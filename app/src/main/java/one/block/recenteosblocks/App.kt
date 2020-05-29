@@ -6,7 +6,6 @@ import one.block.recenteosblocks.di.blockDetailViewModelModule
 import one.block.recenteosblocks.di.blockGraphQlDataSource
 import one.block.recenteosblocks.di.blockGraphQlMapper
 import one.block.recenteosblocks.di.blockRepositoryModule
-import one.block.recenteosblocks.di.blockRestDataSource
 import one.block.recenteosblocks.di.dbModule
 import one.block.recenteosblocks.di.eosApiModule
 import one.block.recenteosblocks.di.homeViewModelModule
